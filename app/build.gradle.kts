@@ -1,5 +1,6 @@
 plugins {
-    id("com.android.application")
+    id ("com.android.application")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -35,7 +36,7 @@ android {
 }
 
 dependencies {
-
+    implementation ("com.google.android.gms:play-services-maps:18.2.0")
     implementation ("androidx.core:core-ktx:1.13.0")
     implementation ("androidx.appcompat:appcompat:1.6.1")
     implementation ("androidx.navigation:navigation-fragment-ktx:2.7.7")
