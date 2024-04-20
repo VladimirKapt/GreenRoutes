@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".ui.MainActivity"
+    >
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:onClick="onImageButtonClick"
+
+        android:src="@drawable/baseline_keyboard_backspace_24" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!-- Левая иконка -->
+        <ImageView
+            android:id="@+id/icon_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/baseline_military_tech_24" />
+
+        <!-- Текст -->
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/textcolor"
+            android:text="ТОП ПОЛЬЗОВАТЕЛЕЙ" />
+
+        <!-- Правая иконка -->
+        <ImageView
+            android:id="@+id/icon_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/baseline_military_tech_24" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/image_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/gold"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="15dp">
+
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingStart="5dp"
+            android:text="Владимир Дьяченко"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/path"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/points"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingTop="3dp"
+            android:text="280.5 км"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="6124"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/top2"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/silver"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="15dp">
+
+
+        <TextView
+            android:id="@+id/name_top2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingStart="5dp"
+            android:text="Владимир Дьяченко"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/path_top2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/points_top2"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingTop="3dp"
+            android:text="280.5 км"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/points_top2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="6124"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/top3"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/bronze"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="15dp">
+
+
+        <TextView
+            android:id="@+id/name_top3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingStart="5dp"
+            android:text="Владимир Дьяченко"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/path_top3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/points_top3"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingTop="3dp"
+            android:text="280.5 км"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/points_top3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="6124"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/top4"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/netop"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="15dp">
+
+
+        <TextView
+            android:id="@+id/name_top4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingStart="5dp"
+            android:text="Владимир Дьяченко"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/path_top4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/points_top4"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingTop="3dp"
+            android:text="280.5 км"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/points_top4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="6124"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/top5"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/netop"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="15dp">
+
+
+        <TextView
+            android:id="@+id/name_top5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingStart="5dp"
+            android:text="Владимир Дьяченко"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/path_top5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/points_top5"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingTop="3dp"
+            android:text="280.5 км"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/points_top5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="6124"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/top6"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/netop"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="15dp">
+
+
+        <TextView
+            android:id="@+id/name_top6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingStart="5dp"
+            android:text="Владимир Дьяченко"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/path_top6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/points_top6"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingTop="3dp"
+            android:text="280.5 км"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/points_top6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="6124"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/top7"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/netop"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="15dp">
+
+
+        <TextView
+            android:id="@+id/name_top7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingStart="5dp"
+            android:text="Олег 2"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/path_top7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/points_top7"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingTop="3dp"
+            android:text="280.5 км"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/points_top7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="6124"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/top8"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/netop"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="15dp">
+
+
+        <TextView
+            android:id="@+id/name_top8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingStart="5dp"
+            android:text="Олег 3"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/path_top8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/points_top8"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingTop="3dp"
+            android:text="280.5 км"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/points_top8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="228"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/top9"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/netop"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="15dp">
+
+
+        <TextView
+            android:id="@+id/name_top9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingStart="5dp"
+            android:text="Супер Кар "
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/path_top9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/points_top9"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingTop="3dp"
+            android:text="0.5 км"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/points_top9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="1000"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/top10"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/netop"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="15dp">
+
+
+        <TextView
+            android:id="@+id/name_top10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingStart="5dp"
+            android:text="Виктор Корнеплод"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/path_top10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/points_top10"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingTop="3dp"
+            android:text="2800000.5 км"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/points_top10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="64"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/top11"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/netop"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="15dp">
+
+
+        <TextView
+            android:id="@+id/name_top11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingStart="5dp"
+            android:text="Виктор Корнеплод"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/path_top11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/points_top11"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingTop="3dp"
+            android:text="2800000.5 км"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/points_top11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="64"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/top12"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/netop"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="15dp">
+
+
+        <TextView
+            android:id="@+id/name_top12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingStart="5dp"
+            android:text="Виктор Корнеплод"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/path_top12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/points_top12"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingTop="3dp"
+            android:text="2800000.5 км"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/points_top12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="64"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/top13"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/netop"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="15dp">
+
+
+        <TextView
+            android:id="@+id/name_top13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingStart="5dp"
+            android:text="Виктор Корнеплод"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/path_top13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/points_top13"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingTop="3dp"
+            android:text="2800000.5 км"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/points_top13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="64"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/top14"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/netop"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="15dp">
+
+
+        <TextView
+            android:id="@+id/name_top14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingStart="5dp"
+            android:text="Виктор Корнеплод"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/path_top14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/points_top14"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingTop="3dp"
+            android:text="2800000.5 км"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/points_top14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="64"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/top15"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/netop"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="15dp">
+
+
+        <TextView
+            android:id="@+id/name_top15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingStart="5dp"
+            android:text="Виктор Корнеплод"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/path_top15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/points_top15"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingTop="3dp"
+            android:text="2800000.5 км"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/points_top15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="64"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/top16"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/netop"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="15dp">
+
+
+        <TextView
+            android:id="@+id/name_top16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingStart="5dp"
+            android:text="Виктор Корнеплод"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/path_top16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@+id/points_top16"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingTop="3dp"
+            android:text="2800000.5 км"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/points_top16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="64"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</LinearLayout>
