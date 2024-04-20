@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.ninja.isPackageable
+
 plugins {
     id("com.android.application")
 }
@@ -35,7 +37,8 @@ android {
 }
 
 dependencies {
-
+    implementation ("com.google.android.material:material:1.2.0-alpha02")
+    implementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation ("androidx.core:core-ktx:1.13.0")
     implementation ("androidx.appcompat:appcompat:1.6.1")
     implementation ("androidx.navigation:navigation-fragment-ktx:2.7.7")
