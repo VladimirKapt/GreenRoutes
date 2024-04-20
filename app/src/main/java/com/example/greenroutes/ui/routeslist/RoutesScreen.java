@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import com.example.greenroutes.R;
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.Objects;
+
 public class RoutesScreen extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,7 @@ public class RoutesScreen extends Fragment {
         TabLayout tabs = view.findViewById(R.id.tabs);
         ViewPager2 pager = view.findViewById(R.id.pager);
 
-        PagerAdapter pagerAdapter = new PagerAdapter(this.getActivity());
+        PagerAdapter pagerAdapter = new PagerAdapter(requireActivity());
         pager.setAdapter(pagerAdapter);
 
         // Register pressing on tabs
@@ -51,7 +53,7 @@ public class RoutesScreen extends Fragment {
         pager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
-                tabs.getTabAt(position).select();
+                Objects.requireNonNull(tabs.getTabAt(position)).select(); // AS suggested to add requireNonNull();
                 super.onPageSelected(position);
             }
         });

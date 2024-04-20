@@ -14,12 +14,10 @@ public class PagerAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        switch (position) {
-            case 1:
-                return new FavouriteRoutesFragment();
-            default:
-                return new CreatedRoutesFragment();
+        if (position == 1) {
+            return new FavouriteRoutesFragment();
         }
+        return new CreatedRoutesFragment();
     }
 
     @Override

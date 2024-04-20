@@ -1,10 +1,10 @@
 package com.example.greenroutes.domain;
 
 public class Route {
-    private long id;
-    private String name;
-    private int length;
-    private boolean completed;
+    private final long id;
+    private final String name;
+    private final int length;
+    private final boolean completed;
 
     public Route(long id, String name, int length, boolean completed) {
         this.id = id;

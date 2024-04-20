@@ -13,8 +13,8 @@ import com.example.greenroutes.domain.Route;
 import java.util.List;
 
 public class RouteAdapter extends RecyclerView.Adapter<RouteViewHolder> {
-    private List<Route> routes;
-    private RouteClickListener routeClickListener;
+    private final List<Route> routes;
+    private final RouteClickListener routeClickListener;
 
     public RouteAdapter(List<Route> routes, RouteClickListener routeClickListener) {
         this.routes = routes;
