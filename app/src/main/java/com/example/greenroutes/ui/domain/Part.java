@@ -1,4 +1,4 @@
-package com.example.greenroutes.ui;
+package com.example.greenroutes.ui.domain;
 
 public class Part {
 

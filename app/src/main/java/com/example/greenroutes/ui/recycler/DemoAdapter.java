@@ -1,4 +1,4 @@
-package com.example.greenroutes.ui;
+package com.example.greenroutes.ui.recycler;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.greenroutes.R;
+import com.example.greenroutes.ui.domain.Part;
 
 import java.util.List;
 
