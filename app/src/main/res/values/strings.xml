@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">GreenRoutes</string>
+
     <string name="name">Владимир Дьяченко</string>
     <string name="path">280.5 км</string>
     <string name="points">6124</string>
@@ -8,4 +9,5 @@
     <string name="profil_route">22 маршрута</string>
     <string name="prifil_nikname">Имя Фамилия</string>
     <string name="prifil_city">Город: Москва</string>
+
 </resources>
