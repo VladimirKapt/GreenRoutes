@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         replaceFragment(new MainMap());
 
-        binding.bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+       /* binding.bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 return false;
             }
-        });
+        });*/
     }
     private void replaceFragment(Fragment fragment){
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
