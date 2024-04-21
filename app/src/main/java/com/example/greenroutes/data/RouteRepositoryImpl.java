@@ -1,5 +1,7 @@
 package com.example.greenroutes.data;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.example.greenroutes.data.dto.FullRouteDto;
@@ -19,7 +21,7 @@ import java.util.function.Consumer;
 
 public class RouteRepositoryImpl implements RouteRepository {
     private static RouteRepositoryImpl INSTANCE;
-    private RouteApi routeApi = RetrofitFactory.getInstance().getRouteApi();
+    private final RouteApi routeApi = RetrofitFactory.getInstance().getRouteApi();
 
     private RouteRepositoryImpl(){}
     public static synchronized RouteRepositoryImpl getInstance(){
@@ -34,7 +36,7 @@ public class RouteRepositoryImpl implements RouteRepository {
         routeApi.getAll().enqueue(new CallToConsumer<>(
                 callback,
                 routesDto ->{
-                    ArrayList<ItemRouteEntity> result = new ArrayList<>(routesDto.size());
+                    ArrayList<ItemRouteEntity> result = new ArrayList<>();
                     for(RouteDto route : routesDto){
                         final String id = route.id;
                         final String name = route.name;

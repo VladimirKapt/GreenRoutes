@@ -26,13 +26,9 @@ public class RouteDto {
     public boolean passed;
 
     public static class Coordination {
-
         @SerializedName("x")
         public Float x;
-
         @SerializedName("y")
         public Float y;
-
-
     }
 }

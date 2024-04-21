@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="">
 
-    <!--TODO: добавить фрагменты экранов-->
-    <fragment
+    ><!--app:startDestination=""-->
+
+    <!--<fragment
         android:id="@+id/mapFragment"
         android:name="com.example.greenroutes.ui.Map.MainMapView"
         android:label="MainMap"
 
-        />
+        />-->
 
 
 </navigation>
