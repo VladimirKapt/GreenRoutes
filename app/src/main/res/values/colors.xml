@@ -2,4 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="netop">#CBE2B8</color>
+    <color name="bronze">#C69A67</color>
+    <color name="silver">#D9D9D9</color>
+    <color name="gold">#FFDE69</color>
+    <color name="textcolor">#007C0C</color>
+    <color name="background">#B0BDAF</color>
+    <color name="panel">#D9D9D9</color>
 </resources>

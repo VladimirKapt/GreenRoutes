@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">GreenRoutes</string>
+
     <string name="title_created">Created</string>
     <string name="title_favourites">Favourites</string>
     <string name="checkmark">✓</string>
     <string name="route_name_placeholder">Empty route</string>
     <string name="route_length_placeholder">0 km</string>
     <string name="title_add">Add</string>
+
 </resources>
