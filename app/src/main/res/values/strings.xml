@@ -10,13 +10,4 @@
     <string name="helper">Tap the map to enter the points of the route</string>
     <string name="title_continue">Continue</string>
     <string name="edit_route_name_hint">Enter the name of the route</string>
-    <string name="name">Владимир Дьяченко</string>
-    <string name="path">280.5 км</string>
-    <string name="points">6124</string>
-    <string name="profil_path">123.2 км</string>
-    <string name="prifil_points">Рейтинг: 3329</string>
-    <string name="profil_route">22 маршрута</string>
-    <string name="prifil_nikname">Имя Фамилия</string>
-    <string name="prifil_city">Город: Москва</string>
-
 </resources>

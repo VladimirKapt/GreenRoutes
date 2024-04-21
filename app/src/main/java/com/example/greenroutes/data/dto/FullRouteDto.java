@@ -9,6 +9,10 @@ import java.util.List;
 
 public class FullRouteDto {
     @Nullable
+    @SerializedName("id")
+    public String id;
+
+    @Nullable
     @SerializedName("name")
     public String name;
     @Nullable
@@ -31,13 +35,10 @@ public class FullRouteDto {
     public String description;
 
     public static class Coordination {
-
         @SerializedName("x")
         public Float x;
-
         @SerializedName("y")
         public Float y;
-
 
     }
 

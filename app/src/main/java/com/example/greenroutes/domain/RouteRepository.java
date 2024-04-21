@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public interface RouteRepository {
-    void getAllRoutes(@NonNull Consumer<Status<List<ItemRouteEntity>>> callback);
+    void getAllRoutes(@NonNull Consumer<Status<List<FullRouteEntity>>> callback);
     void getRoute(@NonNull String id, @NonNull Consumer<Status<FullRouteEntity>> callback);
 
 }

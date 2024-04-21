@@ -32,21 +32,34 @@ public class RouteRepositoryImpl implements RouteRepository {
     }
 
     @Override
-    public void getAllRoutes(@NonNull Consumer<Status<List<ItemRouteEntity>>> callback) {
+    public void getAllRoutes(@NonNull Consumer<Status<List<FullRouteEntity>>> callback) {
         routeApi.getAll().enqueue(new CallToConsumer<>(
                 callback,
                 routesDto ->{
-                    ArrayList<ItemRouteEntity> result = new ArrayList<>();
-                    for(RouteDto route : routesDto){
+                    ArrayList<FullRouteEntity> result = new ArrayList<>();
+                    for(FullRouteDto route : routesDto){
+                        List<LatLng> latLngList = new ArrayList<>();
+                        if (route.coordinations != null) {
+                            for (FullRouteDto.Coordination coordination : route.coordinations) {
+                                latLngList.add(new LatLng(coordination.x, coordination.y));
+                            }
+                        }
                         final String id = route.id;
                         final String name = route.name;
-                        final Float x = route.startCoordination.x;
-                        final Float y = route.startCoordination.y;
                         final Boolean passed = route.passed;
-                        if(id != null && name != null && x != null && y != null){
-                            result.add(new ItemRouteEntity(id,name,new LatLng(x,y),passed));
+                        if(id != null && name != null){
+                            result.add(new FullRouteEntity(
+                                    id,
+                                    name,
+                                    route.authorNickname,
+                                    route.distance,
+                                    route.favoriteN,
+                                    latLngList,
+                                    route.passed,
+                                    route.description));
                         }
                     }
+                    Log.w("routesDto" , routesDto.toString());
                     return result;
                 }
         ));
@@ -56,28 +69,42 @@ public class RouteRepositoryImpl implements RouteRepository {
     public void getRoute(@NonNull String id, @NonNull Consumer<Status<FullRouteEntity>> callback) {
         routeApi.getById(id).enqueue(new CallToConsumer<>(
                 callback,
-                routes ->{
-                    final String name = routes.name;
+                route ->{
+                    Log.w("route2" , route.toString());
+
+                    final String name = route.name;
                     List<LatLng> latLngList = new ArrayList<>();
-                    if (routes.coordinations != null) {
-                        for (FullRouteDto.Coordination coordination : routes.coordinations) {
+                    if (route.coordinations != null) {
+                        for (FullRouteDto.Coordination coordination : route.coordinations) {
                             latLngList.add(new LatLng(coordination.x, coordination.y));
                         }
                     }
-                    if (name != null) {
+                    Log.w("route" , route.toString());
+                    return new FullRouteEntity(
+                            id,
+                            name,
+                            route.authorNickname,
+                            route.distance,
+                            route.favoriteN,
+                            latLngList,
+                            route.passed,
+                            route.description
+                    );
+                    /*if (name != null) {
                         return new FullRouteEntity(
                                 name,
-                                routes.authorNickname,
-                                routes.distance,
-                                routes.favoriteN,
+                                route.authorNickname,
+                                route.distance,
+                                route.favoriteN,
                                 latLngList,
-                                routes.passed,
-                                routes.description
+                                route.passed,
+                                route.description
                         );
                     } else {
                         return null;
-                    }
+                    }*/
                 }
         ));
+
     }
 }

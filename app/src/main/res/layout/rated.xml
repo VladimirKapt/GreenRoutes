@@ -9,6 +9,7 @@
     android:padding="10dp"
     android:background="@color/background"
     tools:context=".ui.MainActivity">
+<!--
 
 
     <ImageButton
@@ -27,7 +28,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <!-- Левая иконка -->
+        &lt;!&ndash; Левая иконка &ndash;&gt;
         <ImageView
             android:id="@+id/icon_left"
             android:layout_width="wrap_content"
@@ -35,7 +36,7 @@
             android:layout_marginStart="16dp"
             android:src="@drawable/baseline_military_tech_24" />
 
-        <!-- Текст -->
+        &lt;!&ndash; Текст &ndash;&gt;
         <TextView
             android:id="@+id/text"
             android:layout_width="match_parent"
@@ -46,7 +47,7 @@
             android:text="ТОП ПОЛЬЗОВАТЕЛЕЙ"
             android:textColor="@color/textcolor" />
 
-        <!-- Правая иконка -->
+        &lt;!&ndash; Правая иконка &ndash;&gt;
         <ImageView
             android:id="@+id/icon_right"
             android:layout_width="wrap_content"
@@ -65,6 +66,7 @@
         tools:listitem="@layout/item"
         />
 
+-->
 
 
 </LinearLayout>

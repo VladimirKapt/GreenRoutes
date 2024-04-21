@@ -1,3 +1,4 @@
+/*
 package com.example.greenroutes.ui.domain;
 
 public class Part {
@@ -28,3 +29,4 @@ public class Part {
     }
 
 }
+*/

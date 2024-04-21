@@ -16,7 +16,7 @@ public class GetRoutesListUseCase {
         this.repo = repo;
     }
 
-    public void execute(@NonNull Consumer<Status<List<ItemRouteEntity>>> callback){
+    public void execute(@NonNull Consumer<Status<List<FullRouteEntity>>> callback){
         repo.getAllRoutes(callback);
     }
 }

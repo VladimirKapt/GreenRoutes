@@ -40,7 +40,7 @@ android {
 
 dependencies {
 
-    implementation ("com.google.android.material:material:1.2.0-alpha02")
+    implementation ("com.google.android.material:material:1.11.0")
     implementation("androidx.test.espresso:espresso-core:3.5.1")
 
     implementation ("com.squareup.okhttp3:logging-interceptor:4.7.2")

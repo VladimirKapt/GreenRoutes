@@ -4,6 +4,7 @@
     android:background="@color/background"
     android:orientation="vertical"
     android:padding="16dp">
+<!--
 
 
     <TextView
@@ -180,6 +181,7 @@
         android:scaleType="fitXY"
         android:src="@drawable/img_3"
         android:padding="10dp"/>
+-->
 
 
 </LinearLayout>

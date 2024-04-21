@@ -12,11 +12,10 @@ public class RetrofitFactory {
     private static RetrofitFactory INSTANCE;
     private RetrofitFactory(){}
     private HttpLoggingInterceptor logging = new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
-    OkHttpClient client = new OkHttpClient.Builder()
+    public OkHttpClient client = new OkHttpClient.Builder()
             .addInterceptor(logging)
             .build();
     public static synchronized RetrofitFactory getInstance(){
-
 
         if (INSTANCE == null){
             INSTANCE = new RetrofitFactory();

@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-
+<!--
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
         android:background="@color/panel"
         android:padding="10dp"/>
 
-    <!-- Кнопка "Сохранить" в нижнем правом углу -->
+    &lt;!&ndash; Кнопка "Сохранить" в нижнем правом углу &ndash;&gt;
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -111,6 +111,6 @@
         android:text="Сохранить"
         android:textSize="20dp"
         android:textColor="@color/black"
-        android:padding="10dp"/>
+        android:padding="10dp"/>-->
 
 </LinearLayout>

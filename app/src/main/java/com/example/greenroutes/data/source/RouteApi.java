@@ -18,10 +18,10 @@ import retrofit2.http.Part;
 import retrofit2.http.Path;
 
 public interface RouteApi {
-    @Headers("Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InZvdmE0IiwidXNlcklkIjoxNjAyLCJpYXQiOjE3MTM2Nzg4NzAsImV4cCI6MTcxMzY4OTY3MH0.MpsW5LNbvIOlAbDgQhdYy4uwRkzjpP4lOg6tZIX_5ec")
+    @Headers("Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InZvdmE0IiwidXNlcklkIjoxNjAyLCJpYXQiOjE3MTM2OTEzMTQsImV4cCI6MTcxMzcwMjExNH0.iZpgHt90K0DptikVDJCu3DKgKSGK2IYQhLtB3l3jYNA")
     @GET("/v1/routes")
-    Call<List<RouteDto>> getAll();
-
+    Call<List<FullRouteDto>> getAll();
+    @Headers("Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InZvdmE0IiwidXNlcklkIjoxNjAyLCJpYXQiOjE3MTM2OTEzMTQsImV4cCI6MTcxMzcwMjExNH0.iZpgHt90K0DptikVDJCu3DKgKSGK2IYQhLtB3l3jYNA")
     @GET("/v1/routes/{id}")
     Call<FullRouteDto> getById(@Path("id") String id);
 

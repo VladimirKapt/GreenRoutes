@@ -9,6 +9,8 @@ import java.util.List;
 
 public class FullRouteEntity {
     @NonNull
+    private final String id;
+    @NonNull
     private final String name;
     @NonNull
     private final String authorNickname;
@@ -23,7 +25,10 @@ public class FullRouteEntity {
     @Nullable
     private final String description;
 
+
+
     public FullRouteEntity(
+            @NonNull String id,
             @NonNull String name,
             @NonNull String authorNickname,
             @NonNull Long distance,
@@ -32,6 +37,7 @@ public class FullRouteEntity {
             @NonNull Boolean passed,
             @NonNull String description
     ) {
+        this.id = id;
         this.name = name;
         this.authorNickname = authorNickname;
         this.distance = distance;
@@ -40,7 +46,10 @@ public class FullRouteEntity {
         this.passed = passed;
         this.description = description;
     }
-
+    @NonNull
+    public String getId() {
+        return id;
+    }
     @NonNull
     public String getName() {
         return name;
@@ -51,12 +60,12 @@ public class FullRouteEntity {
         return authorNickname;
     }
 
-    @NonNull
+    @Nullable
     public Long getDistance() {
         return distance;
     }
 
-    @NonNull
+    @Nullable
     public Long getFavoriteN() {
         return favoriteN;
     }
@@ -66,12 +75,12 @@ public class FullRouteEntity {
         return points;
     }
 
-    @NonNull
+    @Nullable
     public Boolean getPassed() {
         return passed;
     }
 
-    @NonNull
+    @Nullable
     public String getDescription() {
         return description;
     }
