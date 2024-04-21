@@ -10,6 +10,7 @@ import android.content.Context;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +26,7 @@ import java.util.List;
 import com.example.greenroutes.R;
 import com.example.greenroutes.databinding.ActivityMainBinding;
 import com.example.greenroutes.ui.Map.MainMap;
+import com.example.greenroutes.ui.routecreation.RouteCreationScreen;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -40,15 +42,26 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        MainMap mainMap = new MainMap();
+        replaceFragment(mainMap);
 
-        replaceFragment(new MainMap());
 
+        binding.add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.frame_layout,new RouteCreationScreen());
+                ft.remove(mainMap);
+                ft.commit();
+            }
+        });
     }
     public void replaceFragment(Fragment fragment){
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frame_layout,fragment);
         ft.commit();
     }
+
 
 
 }

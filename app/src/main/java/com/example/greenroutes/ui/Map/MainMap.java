@@ -63,14 +63,14 @@ public class MainMap extends Fragment {
                 }
             });
 
-            googleMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
+           /* googleMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
                 @Override
                 public void onMapLongClick(@NonNull LatLng latLng) {
                     FragmentTransaction ft = getChildFragmentManager().beginTransaction();
                     ft.add(new RouteCreationScreen(), "new RouteCreationScreen()");
                     ft.commit();
                 }
-            });
+            });*/
 
             Log.w("null?", data.toString());
             if (mutableStateLiveData.getValue() != null && data.toString() != null) {

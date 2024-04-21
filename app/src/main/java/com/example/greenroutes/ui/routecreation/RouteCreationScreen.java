@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import com.example.greenroutes.R;
 import com.example.greenroutes.data.dto.NewRouteDto;
 import com.example.greenroutes.data.network.RetrofitFactory;
+import com.example.greenroutes.ui.Map.MainMap;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -62,6 +64,9 @@ public class RouteCreationScreen extends Fragment {
     }
 
     private void exitScreen() {
-        getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
+        FragmentTransaction ft = getParentFragmentManager().beginTransaction();
+        ft.replace(R.id.fl,new MainMap());
+        ft.commit();
+        //getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
     }
 }
