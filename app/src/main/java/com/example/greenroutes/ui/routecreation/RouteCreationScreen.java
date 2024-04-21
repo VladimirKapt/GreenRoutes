@@ -54,10 +54,14 @@ public class RouteCreationScreen extends Fragment {
                     }
                 });
 
-                getParentFragment().getActivity().getSupportFragmentManager().beginTransaction().remove(getParentFragment()).commit();
+                exitScreen();
             }
         });
 
         return view;
+    }
+
+    private void exitScreen() {
+        getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
     }
 }
