@@ -1,3 +1,4 @@
+/*
 package com.example.greenroutes.ui.recycler;
 
 import android.view.LayoutInflater;
@@ -72,3 +73,4 @@ class DemoVH extends RecyclerView.ViewHolder {
 
 
 
+*/
