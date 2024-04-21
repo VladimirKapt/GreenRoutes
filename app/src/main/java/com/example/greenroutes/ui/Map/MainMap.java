@@ -46,7 +46,7 @@ public class MainMap extends Fragment {
             RouteRepositoryImpl.getInstance()
     );
     private final MutableLiveData<State> mutableStateLiveData = new MutableLiveData<>();
-    public List<FullRouteEntity> data = new ArrayList<>();
+    public List<ItemRouteEntity> data = new ArrayList<>();
     public FullRouteEntity fullData;
     public final LiveData<State> stateLiveData = mutableStateLiveData;
 
@@ -67,17 +67,15 @@ public class MainMap extends Fragment {
                 @Override
                 public void onMapLongClick(@NonNull LatLng latLng) {
                     FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-                    ft.add(new RouteCreationScreen(),"addRoute");
+                    ft.add(new RouteCreationScreen(), "new RouteCreationScreen()");
                     ft.commit();
                 }
             });
 
             Log.w("null?", data.toString());
             if (mutableStateLiveData.getValue() != null && data.toString() != null) {
-                for (FullRouteEntity item : data) {
-                    for (LatLng latLng: item.getPoints()){
-                        googleMap.addMarker(new MarkerOptions().position(latLng).title(item.getName()));
-                    }
+                for (ItemRouteEntity item : data) {
+                    googleMap.addMarker(new MarkerOptions().position(item.getLatLng()).title(item.getName()));
                     Log.w("item", "new Item");
                 }
             }
@@ -85,7 +83,7 @@ public class MainMap extends Fragment {
                 Log.w("else","!( mutableStateLiveData.getValue() != null && mutableStateLiveData.getValue().items != null)");
             }
 
-           /* googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                 @Override
                 public boolean onMarkerClick(@NonNull Marker marker) {
                     Log.w("null?", data.toString());
@@ -95,12 +93,12 @@ public class MainMap extends Fragment {
                     });
                     return false;
                 }
-            });*/
+            });
         }
     };
-    public String getIdByName(List<FullRouteEntity> data, String sourceName){
+    public String getIdByName(List<ItemRouteEntity> data, String sourceName){
         String id = "";
-        for (FullRouteEntity item : data){
+        for (ItemRouteEntity item : data){
             if (item.getName().equals(sourceName)){
                 id = item.getId();
             }
@@ -115,9 +113,8 @@ public class MainMap extends Fragment {
         mutableStateLiveData.setValue(new State(null, null, true));
         getRoutesListUseCase.execute(status -> {
             //mutableStateLiveData.postValue(fromStatus(status));
-            Log.w("after fromStatus","fromStatus(status).getItems().toString()");
             data.addAll(fromStatus(status).getItems());
-
+            Log.w("fromStatus","statuse = " + fromStatus(status).getItems());
         });
     }
     @Override
@@ -137,21 +134,19 @@ public class MainMap extends Fragment {
 
             return inflater.inflate(R.layout.fragment_main_map, container, false);
         }
-    public static class State {
+    public class State {
         @Nullable
         private final String errorMessage;
 
         @Nullable
-        private final List<FullRouteEntity> items;
+        private final List<ItemRouteEntity> items;
 
         private final boolean isLoading;
 
-        public State(@Nullable String errorMessage, @Nullable List<FullRouteEntity> items, boolean isLoading) {
+        public State(@Nullable String errorMessage, @Nullable List<ItemRouteEntity> items, boolean isLoading) {
             this.errorMessage = errorMessage;
             this.items = items;
             this.isLoading = isLoading;
-            Log.w("frState","items.toString()");
-            //Log.w("frState",items.toString());
         }
 
         @Nullable
@@ -160,7 +155,7 @@ public class MainMap extends Fragment {
         }
 
         @Nullable
-        public List<FullRouteEntity> getItems() {
+        public List<ItemRouteEntity> getItems() {
             return items;
         }
 
@@ -168,9 +163,7 @@ public class MainMap extends Fragment {
             return isLoading;
         }
     }
-    private State fromStatus(Status<List<FullRouteEntity>> status) {
-        Log.w("fromStatus","status.getValue().toString()");
-        Log.w("fromStatus",status.getValue().toString());
+    private State fromStatus(Status<List<ItemRouteEntity>> status) {
         return new State(
                 status.getErrors() != null ? status.getErrors().getLocalizedMessage() : null,
                 status.getValue(),
@@ -178,7 +171,7 @@ public class MainMap extends Fragment {
         );
     }
 
-    public static class FullState {
+    public class FullState {
         @Nullable
         private final String errorMessage;
 

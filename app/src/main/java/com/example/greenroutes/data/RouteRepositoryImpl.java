@@ -32,31 +32,19 @@ public class RouteRepositoryImpl implements RouteRepository {
     }
 
     @Override
-    public void getAllRoutes(@NonNull Consumer<Status<List<FullRouteEntity>>> callback) {
+    public void getAllRoutes(@NonNull Consumer<Status<List<ItemRouteEntity>>> callback) {
         routeApi.getAll().enqueue(new CallToConsumer<>(
                 callback,
                 routesDto ->{
-                    ArrayList<FullRouteEntity> result = new ArrayList<>();
-                    for(FullRouteDto route : routesDto){
-                        List<LatLng> latLngList = new ArrayList<>();
-                        if (route.coordinations != null) {
-                            for (FullRouteDto.Coordination coordination : route.coordinations) {
-                                latLngList.add(new LatLng(coordination.x, coordination.y));
-                            }
-                        }
+                    ArrayList<ItemRouteEntity> result = new ArrayList<>();
+                    for(RouteDto route : routesDto){
                         final String id = route.id;
                         final String name = route.name;
+                        final Float x = route.startCoordination.x;
+                        final Float y = route.startCoordination.y;
                         final Boolean passed = route.passed;
-                        if(id != null && name != null){
-                            result.add(new FullRouteEntity(
-                                    id,
-                                    name,
-                                    route.authorNickname,
-                                    route.distance,
-                                    route.favoriteN,
-                                    latLngList,
-                                    route.passed,
-                                    route.description));
+                        if(id != null && name != null && x != null && y != null){
+                            result.add(new ItemRouteEntity(id,name,new LatLng(x,y),passed));
                         }
                     }
                     Log.w("routesDto" , routesDto.toString());

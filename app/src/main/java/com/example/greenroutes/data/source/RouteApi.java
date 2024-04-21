@@ -18,14 +18,14 @@ import retrofit2.http.Part;
 import retrofit2.http.Path;
 
 public interface RouteApi {
-    @Headers("Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InZvdmE0IiwidXNlcklkIjoxNjAyLCJpYXQiOjE3MTM2OTEzMTQsImV4cCI6MTcxMzcwMjExNH0.iZpgHt90K0DptikVDJCu3DKgKSGK2IYQhLtB3l3jYNA")
+    @Headers("Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InZvdmE0IiwidXNlcklkIjoxNjAyLCJpYXQiOjE3MTM3MDI0MzgsImV4cCI6MTcxNDc4MjQzOH0.3mNsBMScKQa4nq3pM3jstJEY6DUiOxxJaPSJXUjANE4")
     @GET("/v1/routes")
-    Call<List<FullRouteDto>> getAll();
-    @Headers("Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InZvdmE0IiwidXNlcklkIjoxNjAyLCJpYXQiOjE3MTM2OTEzMTQsImV4cCI6MTcxMzcwMjExNH0.iZpgHt90K0DptikVDJCu3DKgKSGK2IYQhLtB3l3jYNA")
+    Call<List<RouteDto>> getAll();
+    @Headers("Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InZvdmE0IiwidXNlcklkIjoxNjAyLCJpYXQiOjE3MTM3MDI0MzgsImV4cCI6MTcxNDc4MjQzOH0.3mNsBMScKQa4nq3pM3jstJEY6DUiOxxJaPSJXUjANE4")
     @GET("/v1/routes/{id}")
     Call<FullRouteDto> getById(@Path("id") String id);
 
-    @Headers("Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFza2FydGl1c3MiLCJ1c2VySWQiOjE0MDQsImlhdCI6MTcxMzY5NTU0NywiZXhwIjoxNzE0Nzc1NTQ3fQ.aSD125vA05Jq5pe4-ScWTt6R-w_diWxLkDc4kigQxdc")
+    @Headers("Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InZvdmE0IiwidXNlcklkIjoxNjAyLCJpYXQiOjE3MTM3MDI0MzgsImV4cCI6MTcxNDc4MjQzOH0.3mNsBMScKQa4nq3pM3jstJEY6DUiOxxJaPSJXUjANE4")
     @POST("/v1/routes")
     Call<Object> createRoute(@Body NewRouteDto newRouteDto);
 }
